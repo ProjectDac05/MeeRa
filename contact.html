@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="style.css" />
+
+<section id="contact">
+  <style>
+    #contact {
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #f7f7f7, #eef2f3);
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    #contact h2 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    #contact p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+      gap: 2rem;
+    }
+
+    .contact-info {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-info:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .image-container img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .founder-info {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <h2>Contact Us</h2>
+  <p>If you have any questions or want to get in touch, feel free to reach out!</p>
+
+  <div class="contact-container">
+    <div class="contact-info">
+      <p>📍 <strong>Address:</strong> At post Chandikapur, Tq. Akot, Dist. Akola, Maharashtra, India</p>
+      <p>📞 <strong>Phone:</strong> 9325842619</p>
+      <p>✉️ <strong>Email:</strong> sanketadhau289@gmail.com</p>
+      <p>🕒 <strong>Hours:</strong> Mon - Sun | 8:00 AM - 8:00 PM</p>
+    </div>
+  </div>
+
+  <div class="image-container">
+    <img src="contact.jpg" alt="Founder Image">
+    <div class="founder-info">
+      <p>SANKET ADHAU</p>
+      <p>Founder, MeeRa Farm</p>
+    </div>
+  </div>
+</section>
+<!-- Footer Section -->
+<footer class="footer">
+  <p>&copy; 2025 MeeRa Farm. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
+</footer>

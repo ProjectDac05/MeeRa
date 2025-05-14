@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Image Gallery - MeeRa</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    .gallery-section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .gallery-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 2rem;
+    }
+
+    .image-gallery picture {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: white;
+    }
+
+    .image-gallery picture:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery picture:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .gallery-section h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="gallery-section">
+    <h2>MeeRa Dairy Gallery</h2>
+    <div class="image-gallery">
+      <picture>
+        <source srcset="dairy1.jpg" type="image/svg+xml" />
+        <img src="dairy1.jpg" alt="MeeRa Dairy Image 1" />
+      </picture>
+      <picture>
+        <source srcset="dairy2.jpg" type="image/svg+xml" />
+        <img src="dairy2.jpg" alt="MeeRa Dairy Image 2" />
+      </picture>
+      <picture>
+        <source srcset="dairy3.jpg" type="image/svg+xml" />
+        <img src="dairy3.jpg" alt="MeeRa Dairy Image 3" />
+      </picture>
+      <picture>
+        <source srcset="dairy4.jpg" type="image/svg+xml" />
+        <img src="dairy4.jpg" alt="MeeRa Dairy Image 4" />
+      </picture>
+      <picture>
+        <source srcset="dairy5.jpg" type="image/svg+xml" />
+        <img src="dairy5.jpg" alt="MeeRa Dairy Image 5" />
+      </picture>
+      <picture>
+        <source srcset="dairy6.jpg" type="image/svg+xml" />
+        <img src="dairy6.jpg" alt="MeeRa Dairy Image 6" />
+      </picture>
+      <picture>
+        <source srcset="dairy7.jpg" type="image/svg+xml" />
+        <img src="dairy7.jpg" alt="MeeRa Dairy Image 7" />
+      </picture>
+      <picture>
+        <source srcset="dairy8.jpg" type="image/svg+xml" />
+        <img src="dairy8.jpg" alt="MeeRa Dairy Image 8" />
+      </picture>
+      <picture>
+        <source srcset="dairy9.jpg" type="image/svg+xml" />
+        <img src="dairy9.jpg" alt="MeeRa Dairy Image 9" />
+      </picture>
+      <picture>
+        <source srcset="dairy10.jpg" type="image/svg+xml" />
+        <img src="dairy10.jpg" alt="MeeRa Dairy Image 10" />
+      </picture>
+      <picture>
+        <source srcset="milk1.avif" type="image/svg+xml" />
+        <img src="milk1.avif" alt="MeeRa Dairy Image 10" />
+      </picture>
+      <picture>
+        <source srcset="ghee1.jpg" type="image/svg+xml" />
+        <img src="ghee1.jpg" alt="MeeRa Dairy Image 10" />
+      </picture>
+      <picture>
+        <source srcset="dairy8.jpg" type="image/svg+xml" />
+        <img src="dairy8.jpg" alt="MeeRa Dairy Image 10" />
+      </picture>
+      <picture>
+        <source srcset="dairy7.jpg" type="image/svg+xml" />
+        <img src="dairy7.jpg" alt="MeeRa Dairy Image 10" />
+      </picture>
+      <picture>
+        <source srcset="butter1.jpg" type="image/svg+xml" />
+        <img src="butter1.jpg" alt="MeeRa Dairy Image 10" />
+      </picture>
+      <picture>
+        <source srcset="dairy5.jpg" type="image/svg+xml" />
+        <img src="dairy5.jpg" alt="MeeRa Dairy Image 10" />
+      </picture>
+      <picture>
+        <source srcset="dairy4.jpg" type="image/svg+xml" />
+        <img src="dairy4.jpg" alt="MeeRa Dairy Image 10" />
+      </picture>
+      <picture>
+        <source srcset="curd1.jpg" type="image/svg+xml" />
+        <img src="curd1.jpg" alt="MeeRa Dairy Image 10" />
+      </picture>
+      <picture>
+        <source srcset="dairy2.jpg" type="image/svg+xml" />
+        <img src="dairy2.jpg" alt="MeeRa Dairy Image 10" />
+      </picture>
+      <picture>
+        <source srcset="pot1.webp" type="image/svg+xml" />
+        <img src="pot1.webp" alt="MeeRa Dairy Image 10" />
+      </picture>
+    </div>
+  </section>
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2025 MeeRa Farm. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>

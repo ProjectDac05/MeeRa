@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="cart.html">
+<div class="cart-container">
+    <h2>Your Cart</h2>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Product A</td>
+          <td>2</td>
+          <td>$10.00</td>
+          <td>$20.00</td>
+        </tr>
+        <tr>
+          <td>Product B</td>
+          <td>1</td>
+          <td>$15.00</td>
+          <td>$15.00</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="total-label">Total Amount:</td>
+          <td class="total-value">$35.00</td>
+        </tr>
+      </tfoot>
+    </table>
+    <a href="checkout.html" class="checkout-button">Proceed to Checkout</a>
+  </div>
+
+  <style>
+    /* Container Animation */
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .cart-container {
+      width: 90%;
+      max-width: 750px;
+      margin: 40px auto;
+      background: linear-gradient(to right, #ffffff, #f0fdf4);
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      animation: fadeInSlide 0.6s ease-in-out;
+      transition: all 0.3s ease;
+    }
+    
+    .cart-container:hover {
+      transform: scale(1.01);
+    }
+    
+    /* Header */
+    .cart-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #28a745;
+      font-weight: 700;
+    }
+    
+    /* Table Styling */
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    
+    .cart-table th,
+    .cart-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+      transition: background-color 0.2s;
+    }
+    
+    .cart-table th {
+      background: #d1fae5;
+      color: #065f46;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .cart-table tr:hover td {
+      background-color: #f0fdf4;
+    }
+    
+    /* Total Styling */
+    .total-label {
+      text-align: right;
+      font-weight: bold;
+      padding-top: 15px;
+      font-size: 16px;
+    }
+    
+    .total-value {
+      font-weight: bold;
+      font-size: 18px;
+      color: #2d6a4f;
+      padding-left: 10px;
+    }
+    
+    /* Checkout Button */
+    .checkout-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(135deg, #28a745, #218838);
+      color: white;
+      padding: 14px;
+      margin-top: 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 16px rgba(40, 167, 69, 0.3);
+    }
+    
+    .checkout-button:hover {
+      background: linear-gradient(135deg, #218838, #1e7e34);
+      box-shadow: 0 8px 20px rgba(33, 136, 56, 0.4);
+      transform: translateY(-2px);
+    }
+    </style>
+    

@@ -1,0 +1,174 @@
+
+<div class="a">
+    <link rel="stylesheet" href="signin.html">
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In - MeeRa</title>
+  <link rel="stylesheet" href="style.css"/>
+ 
+  <style>
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #121212;
+      border-bottom: 1px solid #ede3e3;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #f3ebeb;
+      font-weight: bold;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-actions a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid #fcfcfc;
+      border-radius: 5px;
+      color: #f6f3f3;
+      transition: 0.3s;
+    }
+
+    .nav-actions a:hover {
+      background-color: #333;
+      color: #4c4747;
+    }
+
+    .signin-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      margin: 40px auto;
+    }
+
+    .signin-container h2 {
+      margin-bottom: 24px;
+      color: #333;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .form-group input:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    .signin-btn {
+      width: 100%;
+      padding: 12px;
+      background: #007BFF;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .signin-btn:hover {
+      background: #0056b3;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    .footer a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="signin.html">Sign In</a>
+      <a href="login.html">Log In</a>
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+
+  <!-- Sign In Form -->
+  <div class="signin-container">
+    <h2>Welcome Back</h2>
+    <form>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <button type="submit" class="signin-btn">Sign In</button>
+    </form>
+    <div class="footer">
+      Don't have an account? <a href="signup.html">Sign Up</a>
+    </div>
+  </div>
+</body>
+</html>

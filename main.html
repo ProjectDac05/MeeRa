@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MeeRa</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+      color: #333;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #121212;
+      border-bottom: 1px solid #ede3e3;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #f3ebeb;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #28a745;
+      transform: translateY(-3px);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-actions a, .nav-actions button {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid #fcfcfc;
+      border-radius: 5px;
+      color: #f6f3f3;
+      background: transparent;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-weight: bold;
+    }
+
+    .nav-actions a:hover,
+    .nav-actions button:hover {
+      background-color: #1e5926;
+      color: #ffffff;
+    }
+
+    /* Login Form Styling */
+    .login-form {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #fff;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      display: none;
+      z-index: 999;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .login-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .login-form button:hover {
+      background-color: #1e7e34;
+    }
+
+    /* About Section Styling */
+    #about {
+      padding: 10rem 10rem;
+      background: #fff;
+      color: #333;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+
+    #about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    #about p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      text-align: justify;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Founder Card Styling */
+    .founder-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+      background-color: #f4f6f8;
+      animation: fadeInUp 2s ease-in-out;
+      width: 100%;
+    }
+
+    .founder-card {
+      width: 22rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .founder-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .founder-card .card-body {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Animation for the Founder Section */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Animated Illustration Section */
+    .animation-section {
+      padding: 4rem 2rem;
+      background: #121212;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      position: relative;
+    }
+
+    .animation-section h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #7e9d3e;
+    }
+
+    .animation-container {
+      position: relative;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    .animation-container img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 10px;
+      opacity: 0;
+      animation: imageAnimation 3s ease-in-out infinite alternate;
+    }
+
+    .animation-container img:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .animation-container img:nth-child(2) {
+      animation-delay: 1s;
+    }
+
+    .animation-container img:nth-child(3) {
+      animation-delay: 2s;
+    }
+
+    @keyframes imageAnimation {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(-20px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #121212;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      margin-top: 3rem;
+    }
+
+    .footer a {
+      color: #28a745;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#">Sign In</a>
+      <button onclick="toggleLogin()">Log In</button>
+      <a href="cart.html" class="cart-button">
+        🛒 Cart
+      </a>
+      <a href="Services Booking.html" class=" service-booking-btn">
+        🛒 Services book
+      </a>
+      <a href="help.html">Help</a>
+
+      <!-- Login Dropdown Form -->
+      <div class="login-form" id="loginForm">
+        <form onsubmit="event.preventDefault(); alert('Login submitted!');">
+          <input type="text" placeholder="Username or Email" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Log In</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About MeeRa:</h2>
+    <p><strong><em>
+      MeeRa is a creative platform dedicated to sharing ideas, services, and beautiful imagery. We aim to inspire and connect through design and innovation.
+      Dairy farming is one of the oldest and most important agricultural activities in the world. It involves the breeding and raising of dairy animals such as cows, buffaloes, goats, and sheep for the purpose of milk production. This milk is a vital source of nutrition and is used to make a variety of dairy products like cheese, butter, yogurt, and cream.
+    </em></strong></p>
+  </section>
+
+  <!-- Founder Card Section -->
+  <div class="founder-section">
+    <div class="founder-card">
+      <img src="owner.jpg" alt="Founder Image">
+      <div class="card-body">
+        <h5 class="card-title">SANKET ADHAU</h5>
+        <p class="card-text">Founder at MeeRa Farm.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <!-- Animation Section -->
+  <section class="animation-section">
+    <h2>"The dairy industry is not just about producing milk; it's about nurturing communities, supporting farmers, and providing vital nutrition to millions around the world. It’s a testament to the resilience of agriculture and the innovation that drives sustainability."</h2>
+    <div class="animation-container">
+      <img src="dairy3.jpg" alt="Image 1">
+      <img src="dairy5.jpg" alt="Image 2">
+      <img src="dairy10.jpg" alt="Image 3">
+      <img src="dairy1.jpg" alt="Image 3">
+      <img src="dairy2.jpg" alt="Image 3">
+      <img src="dairy4.jpg" alt="Image 3">
+      <img src="dairy6.jpg" alt="Image 3">
+      <img src="dairy7.jpg" alt="Image 3">
+      <img src="dairy8.jpg" alt="Image 3">
+      <img src="dairy9.jpg" alt="Image 3">
+      
+    </div>
+  </section>
+  <!-- Add this section before the Footer Section -->
+<section class="products-section" style="padding: 4rem 2rem; background-color: #fff; width: 100%; text-align: center;">
+  <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #28a745;">Our Products</h2>
+  <div class="products-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+
+    <!-- Product Card 1 -->
+    <div class="product-card" style="width: 250px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+      <img src="milk1.avif" alt="Fresh Milk" style="width: 100%; height: 180px; object-fit: cover;">
+      <div style="padding: 1rem;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Fresh Cow Milk</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Pure and organic fresh cow milk from our farm.</p>
+        <strong style="color: #28a745;">₹60 / litre</strong>
+        <div style="margin-top: 0.5rem;">
+          <input type="number" min="1" value="1" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 5px;">
+          <button style="margin-left: 10px; padding: 5px 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Card 2 -->
+    <div class="product-card" style="width: 250px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+      <img src="ghee1.jpg" alt="Pure Ghee" style="width: 100%; height: 180px; object-fit: cover;">
+      <div style="padding: 1rem;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Pure Ghee</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Handmade ghee rich in aroma and flavor.</p>
+        <strong style="color: #28a745;">₹500 / 500ml</strong>
+        <div style="margin-top: 0.5rem;">
+          <input type="number" min="1" value="1" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 5px;">
+          <button style="margin-left: 10px; padding: 5px 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Card 3 -->
+    <div class="product-card" style="width: 250px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+      <img src="curd1.jpg" alt="Fresh Curd" style="width: 100%; height: 180px; object-fit: cover;">
+      <div style="padding: 1rem;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Fresh Curd</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Smooth and natural curd made from farm milk.</p>
+        <strong style="color: #28a745;">₹40 / 500g</strong>
+        <div style="margin-top: 0.5rem;">
+          <input type="number" min="1" value="1" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 5px;">
+          <button style="margin-left: 10px; padding: 5px 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Card 4 -->
+    <div class="product-card" style="width: 250px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+      <img src="butter1.jpg" alt="Homemade Butter" style="width: 100%; height: 180px; object-fit: cover;">
+      <div style="padding: 1rem;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;"> White Butter</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Creamy, fresh butter churned at MeeRa Farm.</p>
+        <strong style="color: #28a745;">₹150 / 250g</strong>
+        <div style="margin-top: 0.5rem;">
+          <input type="number" min="1" value="1" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 5px;">
+          <button style="margin-left: 10px; padding: 5px 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Benefits Section -->
+<section class="benefits-section">
+  <h2>Why Choose Our Dairy Products?</h2>
+  <div class="benefit-container">
+    <div class="benefit-card">
+      <img src="milk2.jpg" alt="Milk Benefits">
+      <h4>Milk</h4>
+      <p>Calcium-rich and essential for strong bones, healthy teeth, and improved immunity.</p>
+    </div>
+    <div class="benefit-card">
+      <img src="ghee2.jpg" alt="Ghee Benefits">
+      <h4>Ghee</h4>
+      <p>Promotes digestion, boosts memory, and is full of healthy fats for energy and skin health.</p>
+    </div>
+    <div class="benefit-card">
+      <img src="curd2.jpg" alt="Curd Benefits">
+      <h4>Curd</h4>
+      <p>Natural probiotics that support gut health and help in cooling and digestion.</p>
+    </div>
+    <div class="benefit-card">
+      <img src="butter2.jpg" alt="White Butter Benefits">
+      <h4>White Butter</h4>
+      <p>Rich in vitamins A & D, boosts energy, and enhances the flavor of traditional dishes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CSS for Benefits Section -->
+<style>
+  .benefits-section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #f8f9fa;
+  }
+
+  .benefits-section h2 {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .benefit-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .benefit-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 250px;
+    padding: 1rem;
+    text-align: center;
+    transition: 0.3s ease;
+  }
+
+  .benefit-card:hover {
+    transform: scale(1.03);
+  }
+
+  .benefit-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-card h4 {
+    color: #1b5e20;
+    margin-bottom: 0.5rem;
+  }
+</style>
+<!-- CSS for Benefits Section -->
+<style>
+  .benefits-section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #f8f9fa;
+  }
+
+  .benefits-section h2 {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .benefit-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .benefit-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 250px;
+    padding: 1rem;
+    text-align: center;
+    transition: 0.3s ease;
+  }
+
+  .benefit-card:hover {
+    transform: scale(1.03);
+  }
+
+  .benefit-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-card h4 {
+    color: #1b5e20;
+    margin-bottom: 0.5rem;
+  }
+</style>
+<br>
+
+
+
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2025 MeeRa Farm. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+  <!-- JavaScript for toggling login -->
+  <script>
+    function toggleLogin() {
+      const form = document.getElementById("loginForm");
+      form.style.display = form.style.display === "block" ? "none" : "block";
+    }
+
+    // Optional: Close form if clicked outside
+    window.onclick = function(event) {
+      const form = document.getElementById("loginForm");
+      const button = event.target.closest("button");
+      if (!form.contains(event.target) && !button) {
+        form.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
