@@ -184,7 +184,7 @@ body {
 #about {
   padding: 10rem 10rem;
   background: #fff;
-  color: #333;
+  color: #eeeaea;
   text-align: center;
   animation: fadeIn 2s ease-in-out;
   max-width: 800px;
@@ -305,4 +305,5 @@ body {
 .footer a:hover {
   text-decoration: underline;
 }
+
 

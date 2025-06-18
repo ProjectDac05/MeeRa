@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dairy Farm Helpline</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    /* Helpline Section */
+    .helpline-section {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .helpline-section h2 {
+      font-size: 2em;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+
+    .helpline-section p {
+      font-size: 1.2em;
+      color: #555555;
+      margin-bottom: 20px;
+    }
+
+    /* Contact Button */
+    .contact-button {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: #ffffff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1em;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .contact-button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    /* Icon Container */
+    .icon-container {
+      margin-top: 25px;
+    }
+
+    .animated-icon {
+      width: 60px;
+      animation: bounce 2s infinite;
+    }
+
+    /* Additional Contact Info */
+    .contact-info {
+      text-align: left;
+      margin-top: 20px;
+      font-size: 1em;
+      color: #333333;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    .contact-info strong {
+      display: inline-block;
+      width: 100px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .helpline-section {
+        padding: 20px 25px;
+      }
+
+      .helpline-section h2 {
+        font-size: 1.5em;
+      }
+
+      .helpline-section p {
+        font-size: 1em;
+      }
+
+      .contact-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
+
+      .animated-icon {
+        width: 50px;
+      }
+
+      .contact-info strong {
+        width: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="helpline-section">
+    <h2>Need Assistance?</h2>
+    <p>Call us at <strong>9325842619</strong></p>
+    <a href="tel:18004258030" class="contact-button">Call Now</a>
+    
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:sanketadhau289@gmail.com">sanketadhau289@gmail.com</a></p>
+      <p><strong>Phone:</strong> 9325842619</p>
+      <p><strong>WhatsApp:</strong> 9325842619</p>
+      <p><strong>Address:</strong> At Post Chandikapur Tq. Akot Dist. Akola, 444101</p>
+    </div>
+  </div>
+</body>
+</html>
